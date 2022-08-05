@@ -8,7 +8,7 @@ body > *
 {border: red 1px solid;
     
     flex-grow: 1;
-    flex-basis: 90%;
+    flex-basis: 100%;
     margin-bottom: 20px;
 }
 body{
@@ -20,19 +20,55 @@ body{
     
 }
 
+
+
 .top{ order:2;}
 .flex-nav{order:1;}
 .hero{order:5;}
 .details{order:3;}
 .signup{order:4;}
 footer{order:6;}
-.flex-nav ul{ display:none; }
+.flex-nav ul{ display: none;} 
 
+ul.open{display: block;} 
 
 
 /* Flex Item */
 
 @media all and (min-width: 550px) {
-}
+    .top{order:1;}
+    .flex-nav{order:2;}
+    .hero{order:3;}
+    .details{order:4;}
+    section.signup{order:5; display:flex; flex-direction: row; align-items: center; flex-wrap:wrap; justify-content: center;}
+    form.signup{display:flex; flex-direction: row; align-items:center; border: white 1px solid; flex-basis:100%; justify-content: center;}
+    form.signup input{ display: block;} 
+    ul.open {display:flex; flex-wrap: wrap;}
+    ul.open li{
+        flex-grow: 1;
+        flex-basis: 50%;
+    }
+    ul.open li.social{ flex-basis: 25%;} 
+} 
 @media all and (min-width: 900px) {
+
+.toggleNav {display: none;}
+.flex-nav ul{ display:flex;} 
+.flex-nav ul li {
+    flex-grow: 3;
+}
+.flex-nav ul li.social {
+    flex-grow: 1;
+}
+
+body > *
+{
+    flex-basis: calc(100% - 10vw);
+    margin-left: 5vw;
+    margin-right: 5vw;
+   margin-bottom: 0px;
+    margin-top: 5vh;
+    justify-content: center;
+}
+
 }
